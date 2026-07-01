@@ -21,7 +21,7 @@ A native Windows desktop server browser for Halo: Custom Edition (and other Halo
 You have two options to get the application:
 
 1. **Download the installer (recommended)**  
-   Grab the latest `HaloServerBrowserSetup.exe` from the [Releases page](https://github.com/Chalwk/Halo-Server-Browser-CPP/releases).  
+   Grab the latest `HaloServerBrowserSetup.exe` from the [Releases page](https://github.com/Chalwk/HaloServerBrowser/releases).  
    Run the installer will:
      - Install the application to `C:\Program Files\HaloServerBrowser`.
      - Create a Desktop shortcut and a Start Menu folder with both application and uninstall shortcuts.
