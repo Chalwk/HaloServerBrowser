@@ -2,6 +2,23 @@
 
 A native Windows desktop server browser for Halo: Custom Edition (and other Halo titles), using `gslist.exe` to query master servers. Built with Qt 6 and CMake.
 
+[![Version](https://img.shields.io/github/v/release/Chalwk/HaloServerBrowser?label=Version&display_name=tag)](https://github.com/Chalwk/HaloServerBrowser/releases/latest)
+[![License: GPL v3](https://img.shields.io/github/license/Chalwk/HaloServerBrowser)](https://github.com/Chalwk/HaloServerBrowser/blob/main/LICENSE)
+![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)
+![Qt 6](https://img.shields.io/badge/Qt-6-green.svg)
+![Windows](https://img.shields.io/badge/Platform-Windows-0078D6)
+![CMake](https://img.shields.io/badge/CMake-3.16%2B-064F8C)
+
+---
+
+<table>
+  <tr>
+    <td><img src="./screenshots/1.png" width="300"></td>
+    <td><img src="./screenshots/2.png" width="300"></td>
+    <td><img src="./screenshots/3.png" width="300"></td>
+  </tr>
+</table>
+
 ---
 
 ## Features
@@ -22,7 +39,7 @@ You have two options to get the application:
 
 1. **Download the installer (recommended)**  
    Grab the latest `HaloServerBrowserSetup.exe` from the [Releases page](https://github.com/Chalwk/HaloServerBrowser/releases).  
-   Run the installer will:
+   The installer will:
      - Install the application to `C:\Program Files\HaloServerBrowser`.
      - Create a Desktop shortcut and a Start Menu folder with both application and uninstall shortcuts.
      - Register the application in Windows **Add/Remove Programs** for easy uninstallation.
@@ -53,7 +70,7 @@ You have two options to get the application:
 ## Build & Package
 
 ### Automated (recommended)
-Run `build_package.bat`. It will clean, configure, build, package dependencies, and generate the NSIS installer.
+Run `build.bat`. It will clean, configure, build, package dependencies, and generate the NSIS installer.
 
 ### Manual steps
 ```bash
@@ -61,26 +78,12 @@ rmdir /s /q build
 cmake -S . -B build -DQt6_DIR="C:/Qt/6.11.1/msvc2022_64/lib/cmake/Qt6"
 cmake --build build --config Release
 package.bat build
-makensis /installer/HaloServerBrowser.nsi
+cd installer
+makensis HaloServerBrowser.nsi
 ```
 
 > Adjust the Qt path in `build.bat` and `package.bat` if needed.
-
----
-
-## Usage
-
-- Place `gslist.exe` in the same folder as the executable (or in the project root before packaging).
-- Run the application.
-- Click **Refresh Servers** to query the master server.
-- Use filters and sorting to find the server you want.
-- Click **Players** or **Rules** on any row to see detailed information.
-
----
-
-## Packaging
-
-The `package.bat` script runs `windeployqt` to copy all required Qt DLLs and the VC++ runtime. It also copies `gslist.exe` if present. The NSIS script creates a single installer that installs to `Program Files`, adds Start Menu shortcuts, and registers for uninstallation.
+> `HaloServerBrowserSetup.exe` will appear in `root`.
 
 ---
 

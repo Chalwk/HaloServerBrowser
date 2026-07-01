@@ -160,7 +160,7 @@ void MainWindow::setupUI()
     mainLayout->addWidget(m_table);
 
     // Footer
-    QLabel *footer = new QLabel("Copyright (c) 2026. Jericho Crosby (Chalwk) · Halo Server Browser (Qt port)");
+    QLabel *footer = new QLabel("Copyright (c) 2026. Jericho Crosby (Chalwk) · Halo Server Browser");
     footer->setAlignment(Qt::AlignCenter);
     mainLayout->addWidget(footer);
 }
